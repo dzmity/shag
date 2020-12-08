@@ -1,0 +1,7 @@
+[RUS | Video] Как работает Java: https://www.youtube.com/watch?v=AnRKrnbiVzU
+
+[RUS | Article] Примитивные типы: http://study-java.ru/uroki-java/urok-6-sintaksis-java-peremennye-i-tipy-dannyh/
+
+[RUS | Article] Правила наименования: https://khasang.io/courses/cleancode/lectures/4428018
+
+[RUS | Video] Создание объектов: https://www.youtube.com/watch?v=_GLnOwDEE_A
