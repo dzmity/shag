@@ -35,7 +35,7 @@
 Необходимо чтобы все данные и результаты печатались в консоль т.е. используйте команду System.out.println()
 Например, зная количество и цену товаров можно посчитать сумму затрат:
 
-double price = costOfCoffeeNescafeGold * numberOfcoffeeNescafeGoldBlend750g + costOfTireBridgestoneR17* numberOftiresBridgestoneR17;
+double price = costOfCoffeeNescafeGold * numberOfCoffeeNescafeGoldBlend750g + costOfTireBridgestoneR17* numberOfTiresBridgestoneR17;
 System.out.println(“Примерная сумма затрат составит “ + price);
 
 Любой алгоритм приветствуется!
