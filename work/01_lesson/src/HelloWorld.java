@@ -28,6 +28,10 @@ public class HelloWorld {
         // строки можно склеиват с другими примитивами. результатом будет строка
         String s1 = s + 12;
 
+        // операторы
+        http://www.mstu.edu.ru/study/materials/java/05.htm
+
+
         // Особенности специальных значений с плавающей точкой
         System.out.println(Math.sqrt(-1.0));
         System.out.println(0.0 / 0.0);
