@@ -12,8 +12,21 @@ public class HelloWorld {
 
         System.out.print(333);
 
+        char ch = 's';
+        char ch2 = '!';
+        float fl = 0.07f;
+        double db = 0.07;
+
         // Имена переменных  не могут содержать пробелов, символов +,- и т.д
         int a, b, c;
+
+        a = 5;
+        byte b1 = 12;
+        byte b2 = 14;
+        byte b3 = (byte) (b1 + b2);
+        boolean bl;
+
+        int e = 12;
 
         int d;
 
@@ -22,6 +35,7 @@ public class HelloWorld {
         int A, B, C;
 
 
+        String st = "dsfasdf";
         // строки можно склеивать при помощи знака +
         String s = "Java" + " is the best";
 
