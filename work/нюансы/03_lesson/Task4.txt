@@ -1,0 +1,94 @@
+ if (a > 0 & a < 8) {
+    switch (a) {
+        case (1):
+            System.out.println("Понедельник");
+            break;
+        case (2):
+            System.out.println("Вторник");
+            break;
+        case (3):
+            System.out.println("Среда");
+            break;
+        case (4):
+            System.out.println("Четверг");
+            break;
+        case (5):
+            System.out.println("Пятница");
+            break;
+        case (6):
+            System.out.println("Суббота");
+            break;
+        case (7):
+            System.out.println("Воскресенье");
+            break;
+    }
+
+} else {
+    System.out.println("Такого дня недели не существует!");
+}
+------------------------------------------------------
+
+switch (b) {
+    case 1:
+        System.out.println("Понедельник");
+        break;
+    case 2:
+        System.out.println("Вторник");
+        break;
+    case 3:
+        System.out.println("Среда");
+        break;
+    case 4:
+        System.out.println("Четверг");
+        break;
+    case 5:
+        System.out.println("Пятница");
+        break;
+    case 6:
+        System.out.println("Суббота");
+        break;
+    case 7:
+        System.out.println("Воскресенье");
+        break;
+    default:
+        System.out.println("Такого дня недели не существует");
+        break;
+}
+------------------------------------------------------------------------------------------------------------
+
+switch (number) {
+    case 1: {
+        System.out.println("Monday");
+        break;
+    }
+    case 2: {
+        System.out.println("Tuesday");
+        break;
+    }
+    case 3: {
+        System.out.println("Wednesday");
+        break;
+    }
+    case 4: {
+        System.out.println("Thursday");
+        break;
+    }
+    case 5: {
+        System.out.println("Friday");
+        break;
+    }
+    case 6: {
+        System.out.println("Saturday");
+        break;
+    }
+    case 7: {
+        System.out.println("Sunday");
+        break;
+    }
+    default: {
+        System.out.println("There is no such day of the week!");
+        break;
+    }
+}
+------------------------------------------------------------------------------------------------------------
+

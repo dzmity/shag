@@ -1,0 +1,75 @@
+if (a % 400 == 0 && a % 100 == 0) {
+    System.out.println(a + " год высокосный!" + '\n');
+} else if (a % 4 == 0 && a % 100 > 0) {
+    System.out.println(a + " год высокосный!" + '\n');
+} else if (a % 100 == 0) {
+    System.out.println(a + " этот год обычный!" + '\n');
+} else {
+    System.out.println(a + " этот год обычный!" + '\n');
+}
+------------------------------------------------------
+ if (year % 400 == 0 && year % 100 == 0) {
+    x = 366;
+    System.out.println("Високосный год! Количество дней = " + x);
+} else if (year % 100 == 0 && year % 400 != 0) {
+    x = 365;
+    System.out.println("Обычный год! Количество дней = " + x); //для различия вывода и проверки
+} else if (year % 4 == 0) {
+    x = 366;
+    System.out.println("Год високосный! Количество дней = " + x); //тоже самое, что и выше
+} else {
+    x = 365;
+    System.out.println("Невисокосные года! Количество дней = " + x);
+}
+------------------------------------------------------
+int yearVysokosny = scanner.nextInt();
+switch (yearVysokosny % 400) {
+    case 0:
+        System.out.println("Это високосный год! = 366 дней");
+        break;
+    case 100:
+        System.out.println("Это обычный год! = 365 дней");
+        break;
+    default:
+        if ((yearVysokosny % 100) == 0) {
+            System.out.println("Это обычный год! = 365 дней");
+        } else {
+            if (((yearVysokosny % 400) % 4) == 0) {
+                System.out.println("Это високосный год! = 366 дней");
+            } else {
+                System.out.println("Это обычный год! = 365 дней");
+            }
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Лучшее решение - Гомончук  Грицкеич
+
+if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+     System.out.println("Высокосный год!");
+ } else
+     System.out.println("Обычный год!");
+
+}
+
+int a = scanner.nextInt();
+    if (a % 400 == 0) {
+        System.out.println("366");
+    } else if (a % 100 == 0) {
+        System.out.println("365");
+    } else if (a % 4 == 0) {
+        System.out.println("366");
+    } else {
+        System.out.println("365");
+    }

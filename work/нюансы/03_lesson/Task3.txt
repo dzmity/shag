@@ -1,0 +1,41 @@
+System.out.println(num1 + num2 > num3 & num1 + num3 > num2 & num2 + num3 > num1 ? "Треугольник существует." : "Треугольник не существует.");
+------------------------------------
+  if (a + b > c & a + c > b & b + c > a) {
+------------------------------------
+
+if (a >= b + c) {
+    System.out.println("Треугольник не существует");
+} else if (b >= a + c) {
+    System.out.println("Треугольник не существует");
+} else if (c >= b + a){
+    System.out.println("Треугольник не существует");
+} else
+    System.out.println("Треугольник существует");
+
+------------------------------------
+
+if (a + b >= c && b + c >= a && a + c >= b) {
+    System.out.println("Треугольник существует");
+} else {
+    System.out.println("Треугольника не существует");
+}
+
+---------------------------------------------
+
+ if (c > b & b > a) {
+        System.out.println("Треугольник существует!" + '\n');
+    } else if (a > c & c > b) {
+        System.out.println("Треугольник существует!" + '\n');
+    } else if (b > a & a > c) {
+        System.out.println("Треугольник существует!" + '\n');
+    } else if (a > b & b > c) {
+        System.out.println("Треугольник существует!" + '\n');
+    } else if (c > a & a > b) {
+        System.out.println("Треугольник существует!" + '\n');
+    } else if (b > c & c > a) {
+        System.out.println("Треугольник существует!" + '\n');
+
+    } else {
+        System.out.println("Треугольник не существует!" + '\n');
+    }
+}

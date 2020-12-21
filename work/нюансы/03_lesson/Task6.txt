@@ -1,0 +1,66 @@
+double t = n % 5;
+if (t < 3) {
+    System.out.println("Зеленый");
+} else if (t < 4) {
+    System.out.println("Желтый");
+} else
+    System.out.println("Красный");
+
+-----------------------------------------------------------
+if (d >= 0 && d < 10) {
+    if (d >= 0 && d < 3) {
+        System.out.println("зелёный");
+    }
+    else if (d >= 3 && d < 4) {
+        System.out.println("жёлтый");
+    }
+    else if (d >= 4 && d < 5) {
+        System.out.println("красный");
+    }
+    else if (d >= 5 && d < 8) {
+        System.out.println("зелёный");
+    }
+    else if (d >= 8 && d < 9) {
+        System.out.println("жёлтый");
+    }
+    else if (d >= 9 && d < 10) {
+        System.out.println("красный");
+    }
+}
+
+else {
+    double d1 = d % 10;
+
+    if (d1 >= 0 && d1 < 10) {
+        if (d1 >= 0 && d1 < 3) {
+            System.out.println("зелёный");
+        }
+        else if (d1 >= 3 && d1 < 4) {
+            System.out.println("жёлтый");
+        }
+        else if (d1 >= 4 && d1 < 5) {
+            System.out.println("красный");
+        }
+        else if (d1 >= 5 && d1 < 8) {
+            System.out.println("зелёный");
+        }
+        else if (d1 >= 8 && d1 < 9) {
+            System.out.println("жёлтый");
+        }
+        else if (d1 >= 9 && d1 < 10) {
+            System.out.println("красный");
+        }
+    }
+}
+
+------------------------------------------------
+ time %= 5;
+if (checkTime <= 0) {
+    System.out.println("There is no such time in minutes!");
+} else if (time <= 1 || time < 3) {
+    System.out.println("Green!");
+} else if (time >= 3 && time < 4) {
+    System.out.println("Yellow!");
+} else {
+    System.out.println("Red!");
+}
