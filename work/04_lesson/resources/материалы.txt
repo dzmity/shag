@@ -1,0 +1,13 @@
+[ENG_TEXT] Условия и if ... else : https://www.w3schools.com/java/java_conditions.asp
+[RUS_TEXT] Условия и if ... else : http://study-java.ru/uroki-java/urok-8-java-logicheskye-i-uslovnye-operatory/
+
+[RUS_VIDEO] Цикл while : https://www.youtube.com/watch?v=15PjODTSTaw&t=324s
+
+[ENG_TEXT] Цикл for : https://www.w3schools.com/java/java_for_loop.asp
+[RUS_TEXT] Цикл for - Примеры задач с решением и объяснением : https://vertex-academy.com/tutorials/ru/zadachi-na-cikl/
+
+----------------------------------------------
+
+На следующее занятие:
+
+[RUS_TEXT] Массивы: http://study-java.ru/uroki-java/massivy-v-java/

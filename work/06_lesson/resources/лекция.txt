@@ -1,0 +1,9 @@
+Casting (приведение/преобразование типов)
+Random - http://proglang.su/java/numbers-random
+
+                        Массивы
+
+Презентация по массивам
+Как массивы устроены в памяти
+                - https://javarush.ru/quests/lectures/questsyntax.level07.lecture02
+Заполнение/вывод значений массива при помощи цикла for each

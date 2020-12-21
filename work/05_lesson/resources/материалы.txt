@@ -1,0 +1,7 @@
+[ENG_TEXT] массивы : http://tutorials.jenkov.com/java/arrays.html
+[RUS_TEXT] массивы : https://metanit.com/java/tutorial/2.4.php
+[RUS_TEXT] Random : http://proglang.su/java/numbers-random
+
+[ENG_VIDEO_SIMPLE] массивы : https://www.youtube.com/watch?v=2eKjuhzI87g
+
+[RUS_VIDEO] массивы : https://www.youtube.com/watch?v=hayMZotu9O4&t=636s

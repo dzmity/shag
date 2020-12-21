@@ -1,0 +1,4 @@
+[RUS_TEXT] двумерные массивы : https://vertex-academy.com/tutorials/ru/dvumernye-massivy-v-java/
+[RUS_TEXT] Random : http://proglang.su/java/numbers-random
+
+[RUS_VIDEO] двумерные массивы : https://www.youtube.com/watch?v=17FwEtVsIMQ
