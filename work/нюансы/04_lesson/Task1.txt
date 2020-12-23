@@ -1,0 +1,17 @@
+Scanner scanner1 = new Scanner(System.in);
+for (int n = 1000; n < 10000; n += 3) {
+    System.out.println(n);
+}
+
+while (s <= q) {
+    System.out.println(s);
+    s = s + 3;
+    continue;
+}
+
+
+
+while (i < 1999) {
+    i = i + 3;
+    System.out.println(i);
+}
