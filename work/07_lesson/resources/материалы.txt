@@ -1,0 +1,4 @@
+[RUS_TEXT] строки : https://metanit.com/java/tutorial/7.1.php
+[ENG_TEXT] Random : https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+
+[RUS_VIDEO] строки : https://www.youtube.com/watch?v=ERTDiGH3XUA&ab_channel=Followthewhiterabbit
