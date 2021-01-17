@@ -1,0 +1,10 @@
+Параметры методов: https://metanit.com/java/tutorial/2.16.php
+Оператор return: https://metanit.com/java/tutorial/2.17.php
+
+Return [video]: https://www.youtube.com/watch?v=wEewTdZEWPY (см примечание)
+Рекурсия [video]: https://www.youtube.com/watch?v=lqovT3n62ts&feature=emb_logo&ab_channel=JavaRush
+Параметры и return [video]: https://www.youtube.com/watch?v=J8ZLRvOO6vk
+
+
+На следующее занятие:
+Конструкторы классов: http://developer.alexanderklimov.ru/android/java/constructor.php
