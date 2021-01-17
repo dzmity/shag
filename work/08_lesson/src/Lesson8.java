@@ -1,6 +1,5 @@
 import java.util.Arrays;
 
-import test.A;
 
 public class Lesson8 {
 
