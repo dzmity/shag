@@ -1,0 +1,4 @@
+Инкапсуляция
+наследование (презентация) - https://www.slideshare.net/slideshow/embed_code/73468226
+инициализация переменных (презентация) - https://www.slideshare.net/slideshow/embed_code/73467505 (18)
+загрузка классов - https://habr.com/ru/post/103830/
