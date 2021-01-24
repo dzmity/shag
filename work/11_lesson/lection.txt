@@ -1,0 +1,6 @@
+1 - Подготовленные вопросы
+2 - Инициализация переменных (презентация) - https://www.slideshare.net/slideshow/embed_code/73467505
+2.1 - Статические переменные, константы
+3 - абстрактный класс
+4 - Интерфейсы - https://metanit.com/java/tutorial/3.7.php
+5 - Полиморфизм - https://docs.google.com/presentation/d/17yRiA4csyO0KNCEbM_qM8HKD2zC_tNrs9cwsb5lt1kQ/edit#slide=id.g632a7f77ee_0_85

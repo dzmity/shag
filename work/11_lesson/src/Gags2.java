@@ -1,0 +1,2 @@
+public class Gags2 {
+}
