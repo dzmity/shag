@@ -1,6 +1,6 @@
 public class Lesson10 {
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        Human human = new Human(30, "Anton", 70.5);
 //        Human human2 = new Human();
 //        human2.setAge(17);
@@ -27,23 +27,23 @@ public class Lesson10 {
 //
 //        animal.eat();
 //        animal.move();
-
-        Insect mosquito = new Insect();
-        mosquito.setColor("black");
-        mosquito.setHeight(0.02);
-        mosquito.setWeight(0.0000001);
-        mosquito.setEyesQuantity(2);
+//
+//        Insect mosquito = new Insect();
+//        mosquito.setColor("black");
+//        mosquito.setHeight(0.02);
+//        mosquito.setWeight(0.0000001);
+//        mosquito.setEyesQuantity(2);
 
 //        mosquito.eat();
 //        mosquito.move();
 //        System.out.println(mosquito.getDescription());
 
-        Fish sh4uka = new Fish();
-        sh4uka.setFinQuantity(4);
-        sh4uka.setColor("grey");
-        sh4uka.setWeight(7.0);
-        sh4uka.setHeight(1);
-//        sh4uka.move();
+//        Fish sh4uka = new Fish();
+//        sh4uka.setFinQuantity(4);
+//        sh4uka.setColor("grey");
+//        sh4uka.setWeight(7.0);
+//        sh4uka.setHeight(1);
+////        sh4uka.move();
 
 //        Animal[] mass = new Animal[2];
 //        mass[0] = mosquito;
@@ -52,20 +52,20 @@ public class Lesson10 {
 //            animal.move();
 //        }
 
-       cookAnimal(sh4uka);
-       cookAnimal(mosquito);
-
-    }
-
-    public static void cookAnimal(Animal animal) {
-        Fisherman valera = new Fisherman("Valera");
-        Fish fish;
-        if (animal instanceof Fish) {
-            fish = (Fish) animal;
-            valera.cooke(fish);
-        } else  {
-            System.out.println("Не рыба.");
-        }
-
-    }
+//       cookAnimal(sh4uka);
+//       cookAnimal(mosquito);
+//
+//    }
+//
+//    public static void cookAnimal(Animal2 animal) {
+//        Fisherman valera = new Fisherman("Valera");
+//        Fish fish;
+//        if (animal instanceof Fish) {
+//            fish = (Fish) animal;
+//            valera.cooke(fish);
+//        } else  {
+//            System.out.println("Не рыба.");
+//        }
+//
+//    }
 }
