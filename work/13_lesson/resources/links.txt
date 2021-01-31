@@ -1,0 +1,4 @@
+[article] Константы : https://geekbrains.ru/posts/java_const
+[article] Enum : http://cyclowiki.org/wiki/Enum_(Java)
+[stackoverflow] Enum - обсуждение на форуме : https://stackoverflow.com/questions/4709175/what-are-enums-and-why-are-they-useful
+[exceptions] - https://habr.com/ru/company/golovachcourses/blog/223821/

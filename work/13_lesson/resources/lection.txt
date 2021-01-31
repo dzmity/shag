@@ -1,0 +1,7 @@
+Final, Enum, String (лекция)
+https://docs.google.com/presentation/d/18N0vXLHtIA2UbLBme9HiscAkPj0oNMKbnBhwq0UsEsY/edit#slide=id.p
+Enum - https://metanit.com/java/tutorial/3.8.php
+
+Exception Try-catch-finally
+throw vs throws
+(презентация от шаг) https://www.slideshare.net/slideshow/embed_code/73476367
