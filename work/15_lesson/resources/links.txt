@@ -1,0 +1,4 @@
+array list vs linked list - https://javarush.ru/quests/lectures/questsyntax.level08.lecture05
+array list vs linked list - https://stackoverflow.com/questions/10656471/performance-differences-between-arraylist-and-linkedlist
+
+Collections + generics (Ткач) https://www.youtube.com/watch?v=87pm79sPSvc&list=PLB0276A0A62BDEF06&index=10&ab_channel=%D0%9E%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD%D1%83%D1%80%D0%BE%D0%BA%D0%B8%D0%BF%D0%BEJava
