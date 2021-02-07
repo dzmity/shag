@@ -59,9 +59,9 @@ public class Lesson13 {
             case SCIENCE:
                 System.out.println("123");
                 break;
-            case CLASSIC:
-                System.out.println("321");
-                break;
+//            case CLASSIC:
+//                System.out.println("321");
+//                break;
             default:
                 System.out.println("----");
         }
