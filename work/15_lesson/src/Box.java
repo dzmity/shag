@@ -1,8 +1,7 @@
 import java.util.List;
 
-public class Box<T> {
+public class Box<T extends Product> {
     private T item;
-
 
     public T getItem() {
         return item;

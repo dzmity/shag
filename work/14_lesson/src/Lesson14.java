@@ -1,6 +1,8 @@
+import java.rmi.RemoteException;
+
 public class Lesson14 {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws RemoteException {
         double result = 0;
 //        BuggedCalculator.makeRuntimeException();
 //        BuggedCalculator.division(1, 0);
@@ -11,7 +13,7 @@ public class Lesson14 {
             result = BuggedCalculator.division(1, 0);
 //            result = BuggedCalculator.division(2, 1);
         } catch (ArithmeticException e) {
-            throw new MyCustomnException("Эксепшн из кетча", e);
+//            throw new MyCustomnException("Эксепшн из кетча", e);
 //            result = 1;
 //            System.out.println(e.getMessage());
 //            e.printStackTrace();
@@ -33,5 +35,4 @@ public class Lesson14 {
         calculator.makeNotStaticException();
 
     }
-
 }
