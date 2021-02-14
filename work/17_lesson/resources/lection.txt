@@ -1,0 +1,6 @@
+Equals, HashCode, Comparable, Comparator, Sets, Queue
+
+презентация sets + equals hash code - https://docs.google.com/presentation/d/1ReCuBQPQ2AKmeeF7nwzSDizn3EYZAyJ8i9r0sSsKlXc/edit#slide=id.p
+презентация очереди - https://docs.google.com/presentation/d/1BxinQBcgfoxtcyggaeuDtgZsWQxeLmJPmSUNxFK8hmo/edit#slide=id.p
+презентация шаг сеты - https://www.slideshare.net/slideshow/embed_code/73476634
+

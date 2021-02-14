@@ -1,0 +1,13 @@
+[video] Для чего необходимо переопределять equals() и hashCode() - https://www.youtube.com/watch?v=ZcZQEqxmjOQ&t=282s&ab_channel=%D0%98%D0%B7%D1%83%D1%87%D0%B0%D0%B5%D0%BCJava
+[video] Как правильно переопределить equals() и hashCode() - https://www.youtube.com/watch?v=lWnzRILIEZ0&t=181s&ab_channel=SergeyArkhipov
+[article]
+
+
+[article] set : https://javarush.ru/groups/posts/2147-hashset-v-java
+[article] краткое описание коллекций : https://habr.com/ru/post/237043/
+[video] HashSet and Iterator : https://www.youtube.com/watch?v=izmLgjAg6co
+[video] Подробно о работе HashSet : https://www.youtube.com/watch?v=pe1KKqd7dH8
+
+------------------------------
+
+[video] Map : https://www.youtube.com/watch?v=dKIt-fJ_C4Q
