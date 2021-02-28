@@ -2,7 +2,7 @@ package by.shag.java;
 
 import java.time.LocalDate;
 
-public class Product implements Comparable<Product> {
+public abstract class Product implements Comparable<Product> {
 
     private String name;
     private Integer code;

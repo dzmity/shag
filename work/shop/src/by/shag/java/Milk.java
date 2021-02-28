@@ -30,13 +30,13 @@ public class Milk extends Product {
         this.volume = volume;
     }
 
-
     @Override
     public String toString() {
         return "Milk{" +
                 "brand=" + brand +
                 ", tare=" + tare +
                 ", volume=" + volume +
-                "} " + super.toString();
+                super.toString() +
+                "} ";
     }
 }
