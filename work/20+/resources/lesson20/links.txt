@@ -1,0 +1,4 @@
+Внутренние и вложенные классы -
+https://metanit.com/java/tutorial/3.12.php
+https://javarush.ru/groups/posts/2181-vlozhennihe-vnutrennie-klassih
+Анонимные классы -
