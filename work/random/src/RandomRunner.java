@@ -9,10 +9,10 @@ public class RandomRunner {
     public static void main(String[] args) {
         Map<Integer, String> map = new HashMap<>();
         map.put(1, "Егор");
-        map.put(2, "Шутова А.");
+        map.put(2, "Шуcтова А.");
         map.put(3, "МАРИЯ");
         map.put(4, "Karpovich");
-        map.put(5, "Жека Г.");
+        map.put(5, "Try again");
         map.put(6, "Макс");
         map.put(7, "Димон Математик");
         map.put(8, "Инкогнито");
