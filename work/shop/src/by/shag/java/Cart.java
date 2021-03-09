@@ -14,4 +14,11 @@ public class Cart {
     public void addProductToCart(Product product) {
         products.add(product);
     }
+
+    @Override
+    public String toString() {
+        return "Cart{" +
+                "products=" + products +
+                '}';
+    }
 }

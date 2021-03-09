@@ -1,0 +1,12 @@
+Внутренние и вложенные классы  (Локальные + Анонимные)
+
+Презентация - https://docs.google.com/presentation/d/1nBiNICjR40qaHPEThR19fdXydjWYdPcD3DXrUS_0E30/edit#slide=id.g72ccef791d_0_100
+
+Ссылки:
+https://metanit.com/java/tutorial/3.12.php
+https://javarush.ru/groups/posts/2181-vlozhennihe-vnutrennie-klassih
+https://javarush.ru/groups/posts/2183-staticheskie-vlozhennihe-klassih
+https://habr.com/ru/post/342090/
+
+[RUS | Video] Nested classes: https://www.youtube.com/watch?v=Rh6n-3TQJD4
+[RUS | Video] Nested classes: https://www.youtube.com/watch?v=EvL0eO3VX14
