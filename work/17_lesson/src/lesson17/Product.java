@@ -12,6 +12,9 @@ public class Product implements Comparable<Product> {
 
     private String blabla;
 
+    public Product() {
+    }
+
     public Product(String name, int priceInCents, double weight) {
         this.name = name;
         this.priceInCents = priceInCents;
