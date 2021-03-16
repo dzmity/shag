@@ -1,0 +1,7 @@
+package by.shag.lesson20.golatina;
+
+public enum Genre {
+
+    BOOK, LYRIC, DRAMA, ROMAN, FANTASY, SCIENCE, FAIRY_TALES, EPIC, NON_FICTION, CLASSICS, POETRY, HORROR, PUBLICISM, DETECTIVE, NAUCHPOP
+
+}
