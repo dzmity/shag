@@ -9,6 +9,12 @@ public class Runner {
 
     public static void main(String[] args) {
 
+        String sentence = "Hello, world ,   hello";
+        sentence = sentence.replace(",", " ");
+        System.out.println(sentence);
+        sentence = sentence.replaceAll("\\s+", " ");
+        System.out.println(sentence);
+
         List<FishProduct> fishes = new ArrayList<>();
         FishProduct fish1 = new FishProduct("karp", 12.10, true);
         FishProduct fish2 = new FishProduct("semga", 20.23, true);
@@ -78,7 +84,7 @@ public class Runner {
             }
         };
 
-        Lyamdable lyamdable = (s1, s2) ->  {
+        Lyamdable lyamdable = (s1, s2) -> {
             System.out.println("1st parameter = " + s1);
             System.out.println("2nd parameter = " + s2);
             return s2 + s1;

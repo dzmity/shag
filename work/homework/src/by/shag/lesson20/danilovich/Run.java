@@ -1,11 +1,11 @@
 package by.shag.lesson20.danilovich;
 
-import enums.Binding;
-import enums.Genre;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+
+import by.shag.lesson20.danilovich.enums.Binding;
+import by.shag.lesson20.danilovich.enums.Genre;
 
 public class Run {
     public static void main(String[] args) {
