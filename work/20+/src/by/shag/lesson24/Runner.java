@@ -1,10 +1,16 @@
 package by.shag.lesson24;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectOutputStream;
@@ -52,8 +58,13 @@ public class Runner {
         // file.getTotalSpace();
         // file.setReadonly();
 
-        readAndWriteInOnePortion();
-
+//        readAndWriteInOnePortion();
+//        readAndWriteInPortions();
+//        readAndWriteInBytes();
+//        readAndWriteByteArray();
+//        readAndWriteBufferedStreams();
+//        readAndWriteObject();
+        readAndWriteBufferedStreams();
     }
 
 
@@ -114,7 +125,6 @@ public class Runner {
         }
     }
 
-
     private static void readAndWriteInBytes() {
         File inputFile = new File(generateFilePath("lesson23_01.txt"));
         File outputFile = new File(generateFilePath("lesson23_03.txt"));
@@ -137,7 +147,6 @@ public class Runner {
         }
     }
 
-
     private static void readAndWriteByteArray() {
         String line = "This is a sample string to be capitalized";
         ByteArrayInputStream bais = new ByteArrayInputStream(line.getBytes());
@@ -149,6 +158,54 @@ public class Runner {
         System.out.println("Capitalized string: " + sb.toString());
     }
 
+    private static void readAndWriteBufferedStreams() {
+        //////////// write from string in file
+        String line = "This is 25 lesson. OMG!";
+        try (FileOutputStream out = new FileOutputStream("buffered_stream.txt");
+                BufferedOutputStream bos = new BufferedOutputStream(out)) {
+
+            byte[] lineInBytes = line.getBytes();
+            bos.write(lineInBytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        ////////////// read from file and sout every symbol
+        try (FileInputStream in = new FileInputStream("buffered_stream.txt");
+                BufferedInputStream bis = new BufferedInputStream(in)) {
+
+            int c;
+            while ((c = bis.read()) != -1) {
+                System.out.print((char) c);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // запустить несколько раз
+    private static void readerAndWriter() {
+
+        try (FileReader in = new FileReader("file_reader.txt");
+                BufferedReader br = new BufferedReader(in);
+                FileWriter out = new FileWriter("file_reader_out.txt"); // true in constructor
+                BufferedWriter bw = new BufferedWriter(out)) {
+
+            String line = null;
+            int lineCounter = 0;
+
+            while ((line = br.readLine()) != null) {
+                // записываем каждую четную строку
+                if ((lineCounter++) % 2 == 0) {
+                    // меняем e на E
+                    String newLine = line.replace("e", "E");
+                    bw.write(line + System.getProperty("line.separator"));
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     private static void readAndWriteObject() {
         FileOutputStream fout = null;
@@ -158,6 +215,12 @@ public class Runner {
             Person f = new Person("Sanya", "Pushkin");
             oout = new ObjectOutputStream(fout);
             oout.writeObject(f);
+
+            // +  прочитать из файла
+            // + transient
+            // long serialVersionUID = 1L;  (непредсказуемо число сгенереное компилятором).
+            // а как можно сериализовать объекты в которых есть другие объекты
+            // Externalizable или своя сериализация/десериализация не reflection + static final
         } catch (FileNotFoundException ex) {
             ex.printStackTrace();
         } catch (IOException ex) {
@@ -170,6 +233,10 @@ public class Runner {
             }
         }
     }
+
+
+    // System in, out , error //set out
+
 
     private static String generateFilePath(String fileName) {
         String dirName = System.getProperty("user.dir");

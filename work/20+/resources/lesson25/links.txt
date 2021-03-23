@@ -1,0 +1,2 @@
+Serializable - https://metanit.com/java/tutorial/6.10.php
+Externalizable - https://javarush.ru/groups/posts/2023-znakomstvo-s-interfeysom-externalizable
