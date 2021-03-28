@@ -1,0 +1,9 @@
+Multithreading
+ 0. java rush aтомарность - https://javarush.ru/quests/lectures/questmultithreading.level06.lecture03
+              https://javarush.ru/quests/lectures/questcore.level06.lecture01
+    монитор - https://javarush.ru/quests/lectures/questmultithreading.level06.lecture06
+ 1. registry memory https://www.javatpoint.com/register-memory
+ 2. presentation https://docs.google.com/presentation/d/1XTpmzYDF5RrHdQRGuUDh9EZOTCHZYp7DW9W6MfnpsEY/edit#slide=id.g74780e6e62_0_10
+ 3. happens before https://javarush.ru/groups/posts/1998-upravlenie-potokami-metodih-volatile-i-yield
+
+4. lecture https://mystatfiles.itstep.org/index.php?view_key=rtILv2awXkYrSQ7WVzOr0I8Q3wN1fIYWXbiFzN7JtqeR5XZZGe0MiKq6sIFy%2FxrB30R2Hu0ioaXIZ1fW2mHw6nP2BkGgX1Io9diDVFynE1M%3D
