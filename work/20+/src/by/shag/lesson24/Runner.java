@@ -13,6 +13,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.util.logging.Level;
@@ -23,7 +25,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        String fileName = "lesson23_01.txt";
+        /*String fileName = "lesson23_01.txt";
         String dirName = System.getProperty("user.dir");
         String fullName = dirName + File.separator + fileName;
         System.out.println("File path : " + fullName);
@@ -50,7 +52,7 @@ public class Runner {
         String dirname = dirName + "/tmp/user/java/bin";
         File d = new File(dirname);
         // Create directories now.
-        d.mkdirs();
+        d.mkdirs();*/
 
         // Дополнительно методы
         // file.deleteOnExit();
@@ -64,7 +66,9 @@ public class Runner {
 //        readAndWriteByteArray();
 //        readAndWriteBufferedStreams();
 //        readAndWriteObject();
-        readAndWriteBufferedStreams();
+//        readAndWriteBufferedStreams();
+//        readerAndWriter();
+        readAndWriteObject();
     }
 
 
@@ -161,7 +165,8 @@ public class Runner {
     private static void readAndWriteBufferedStreams() {
         //////////// write from string in file
         String line = "This is 25 lesson. OMG!";
-        try (FileOutputStream out = new FileOutputStream("buffered_stream.txt");
+
+        try (FileOutputStream out = new FileOutputStream("buffered_stream.txt", true);
                 BufferedOutputStream bos = new BufferedOutputStream(out)) {
 
             byte[] lineInBytes = line.getBytes();
@@ -186,9 +191,10 @@ public class Runner {
     // запустить несколько раз
     private static void readerAndWriter() {
 
-        try (FileReader in = new FileReader("file_reader.txt");
+        File inputFile = new File(generateFilePath("file_reader.txt"));
+        try (FileReader in = new FileReader(inputFile);
                 BufferedReader br = new BufferedReader(in);
-                FileWriter out = new FileWriter("file_reader_out.txt"); // true in constructor
+                FileWriter out = new FileWriter("file_reader_out.txt", true); // true in constructor
                 BufferedWriter bw = new BufferedWriter(out)) {
 
             String line = null;
@@ -196,10 +202,10 @@ public class Runner {
 
             while ((line = br.readLine()) != null) {
                 // записываем каждую четную строку
-                if ((lineCounter++) % 2 == 0) {
+                if ((++lineCounter) % 2 == 0) {
                     // меняем e на E
                     String newLine = line.replace("e", "E");
-                    bw.write(line + System.getProperty("line.separator"));
+                    bw.write(newLine + System.getProperty("line.separator"));
                 }
             }
         } catch (Exception e) {
@@ -208,29 +214,28 @@ public class Runner {
     }
 
     private static void readAndWriteObject() {
-        FileOutputStream fout = null;
-        ObjectOutputStream oout = null;
-        try {
-            fout = new FileOutputStream("person.txt");
-            Person f = new Person("Sanya", "Pushkin");
-            oout = new ObjectOutputStream(fout);
-            oout.writeObject(f);
 
+
+        Person person = new Person("Sanya", "Pushkin", "qwerty123");
+        try (FileOutputStream fout = new FileOutputStream(generateFilePath("1.txt"));
+            ObjectOutputStream oout = new ObjectOutputStream(fout)) {
+            oout.writeObject(person);
             // +  прочитать из файла
             // + transient
             // long serialVersionUID = 1L;  (непредсказуемо число сгенереное компилятором).
             // а как можно сериализовать объекты в которых есть другие объекты
             // Externalizable или своя сериализация/десериализация не reflection + static final
-        } catch (FileNotFoundException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
-        } catch (IOException ex) {
-            System.out.println();
-        } finally {
-            try {
-                oout.close();
-            } catch (IOException ex) {
-                System.out.println("sadf");
-            }
+        }
+
+        try(InputStream fis = new FileInputStream(generateFilePath("1.txt"));
+        ObjectInputStream ous = new ObjectInputStream(fis)) {
+            Person deserializedPerson = (Person) ous.readObject();
+            System.out.println(deserializedPerson);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
