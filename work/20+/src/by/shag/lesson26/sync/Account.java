@@ -15,17 +15,14 @@ public class Account {
         return balanceInEuro;
     }
 
-    public void deposit(long amount) {
-
+    public synchronized void deposit(long amount) {
         balanceInEuro += amount;
     }
 
-    public void withdraw(long amount) {
-
-
-        if (balanceInEuro < amount) {
-            throw new NotEnoughMoneyException("not enough money for operation");
-        }
+    public synchronized void withdraw(long amount) {
+//        if (balanceInEuro < amount) {
+//            throw new NotEnoughMoneyException("not enough money for operation");
+//        }
         balanceInEuro -= amount;
     }
 }

@@ -9,6 +9,7 @@ public class SleeperThread extends Thread {
         } catch (InterruptedException e) {
             System.out.println("Sleep method is interrupted");
         }
+        System.out.println("Sleeper thread is finished");
     }
 
 }

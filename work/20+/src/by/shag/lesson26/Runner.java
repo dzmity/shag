@@ -5,9 +5,12 @@ import java.util.Arrays;
 public class Runner {
 
     public static void main(String[] args) {
-        thread();
+//        thread();
         generate10Threads();
     }
+
+
+
 
 
     private static void thread() {
@@ -26,14 +29,15 @@ public class Runner {
 
     private static void generate10Threads() {
 
+        Thread thread = null;
         for (int i = 0; i < 10; i++) {
             // 1 way
-            Thread thread = new HelloWorldThread();
+//            Thread thread = new HelloWorldThread();
 //            thread.start();
 
 
             // 2 way
-            thread = new Thread(new HelloWorldRunnable());
+            thread = new Thread(() -> System.out.println(Thread.currentThread().getName()));
             thread.start();
 
             // 3 way
@@ -43,5 +47,10 @@ public class Runner {
             // shared stateless runnable //only read
         }
         System.out.println("Hello from main thread");
+        System.out.println("Hello from main thread");
+        System.out.println("Hello from main thread");
+        System.out.println("Hello from main thread");
+        System.out.println("Hello from main thread");
+        thread.start();
     }
 }

@@ -12,5 +12,6 @@ public class WorkerThread extends Thread {
                 break;
             }
         }
+        System.out.println("Worker thread is finished");
     }
 }

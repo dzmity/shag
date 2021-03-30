@@ -4,6 +4,10 @@ public class HelloWorldThread extends Thread {
 
     @Override
     public void run() {
-        System.out.println("Hello world from thread " + getName());
+        System.out.print("Hello");
+        System.out.print(" world");
+        System.out.print(" from");
+        System.out.println(" thread " + getName());
+
     }
 }

@@ -6,8 +6,8 @@ public class Runner {
         Account account = new Account(100_000);
         System.out.println("Start balance = " + account.getBalanceInEuro());
 
-        Thread withdrawThread = new WithdrawThread(account);
         Thread depositThread = new DepositThread(account);
+        Thread withdrawThread = new WithdrawThread(account);
 
         withdrawThread.start();
         depositThread.start();
