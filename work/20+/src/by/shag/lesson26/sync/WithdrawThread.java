@@ -10,8 +10,12 @@ public class WithdrawThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 1_000; i++) {
-            account.withdraw(5);
+        for (int i = 0; i < 5; i++) {
+            try {
+                account.waitAndWithdraw(5_000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

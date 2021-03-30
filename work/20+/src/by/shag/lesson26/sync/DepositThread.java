@@ -10,8 +10,12 @@ public class DepositThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 1_000; i++) {
-            account.deposit(5);
+        for (int i = 0; i < 25; i++) {
+            try {
+                account.deposit(1_000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

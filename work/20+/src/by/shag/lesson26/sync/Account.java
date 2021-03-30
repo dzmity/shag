@@ -15,8 +15,10 @@ public class Account {
         return balanceInEuro;
     }
 
-    public synchronized void deposit(long amount) {
+    public synchronized void deposit(long amount) throws InterruptedException {
         balanceInEuro += amount;
+        System.out.println("Добавил на счет " + amount + " Текущий баланс = " + balanceInEuro);
+        notify();
     }
 
     public synchronized void withdraw(long amount) {
@@ -24,5 +26,16 @@ public class Account {
 //            throw new NotEnoughMoneyException("not enough money for operation");
 //        }
         balanceInEuro -= amount;
+    }
+
+    public synchronized void waitAndWithdraw(long amount) throws InterruptedException {
+        while (balanceInEuro < amount) {
+            System.out.println("Balance = " + balanceInEuro + " is less than amount for withdraw. Waiting");
+            notify();
+            wait();
+        }
+        balanceInEuro -= amount;
+        System.out.println("Списали со счета " + amount + " Текущий баланс = " + balanceInEuro);
+
     }
 }

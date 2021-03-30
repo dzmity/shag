@@ -3,13 +3,14 @@ package by.shag.lesson26.sync;
 public class Runner {
 
     public static void main(String[] args) throws InterruptedException {
-        Account account = new Account(100_000);
+        Account account = new Account(1_000);
         System.out.println("Start balance = " + account.getBalanceInEuro());
 
         Thread depositThread = new DepositThread(account);
         Thread withdrawThread = new WithdrawThread(account);
 
         withdrawThread.start();
+        Thread.sleep(1000L);
         depositThread.start();
 
         withdrawThread.join();
