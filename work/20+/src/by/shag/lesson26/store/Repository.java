@@ -4,7 +4,7 @@ public class Repository {
 
     public static final Integer MAX_CAPACITY = 10;
 
-    private int currentProductQuantity;
+    private volatile int currentProductQuantity;
 
     public Repository(int currentProductQuantity) {
         this.currentProductQuantity = currentProductQuantity;

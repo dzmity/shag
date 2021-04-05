@@ -1,41 +1,42 @@
 package by.shag.lesson26.sync;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Account {
 
-    private long balanceInEuro;
+    private AtomicLong balanceInEuro;
 
     public Account() {
     }
 
     public Account(long balanceInEuro) {
-        this.balanceInEuro = balanceInEuro;
+        this.balanceInEuro = new AtomicLong(balanceInEuro);
     }
 
-    public long getBalanceInEuro() {
+    public AtomicLong getBalanceInEuro() {
         return balanceInEuro;
     }
 
-    public synchronized void deposit(long amount) throws InterruptedException {
-        balanceInEuro += amount;
+    public void deposit(long amount) throws InterruptedException {
+        balanceInEuro.getAndAdd(amount);
         System.out.println("Добавил на счет " + amount + " Текущий баланс = " + balanceInEuro);
-        notify();
+//        notify();
     }
 
     public synchronized void withdraw(long amount) {
 //        if (balanceInEuro < amount) {
 //            throw new NotEnoughMoneyException("not enough money for operation");
 //        }
-        balanceInEuro -= amount;
+        balanceInEuro.getAndAdd(-1 * amount);
     }
 
-    public synchronized void waitAndWithdraw(long amount) throws InterruptedException {
-        while (balanceInEuro < amount) {
+    public void waitAndWithdraw(long amount) throws InterruptedException {
+        while (balanceInEuro.get() < amount) {
             System.out.println("Balance = " + balanceInEuro + " is less than amount for withdraw. Waiting");
-            notify();
-            wait();
+//            notify();
+//            wait();
         }
-        balanceInEuro -= amount;
+        balanceInEuro.getAndAdd(-1 * amount);
         System.out.println("Списали со счета " + amount + " Текущий баланс = " + balanceInEuro);
-
     }
 }
