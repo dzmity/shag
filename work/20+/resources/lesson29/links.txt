@@ -1,0 +1,16 @@
+Thread Pools
+
+[RUS | Video] Synchronized List and Array : https://www.youtube.com/watch?v=2orB8C44xow
+
+[RUS | Video] Synchronized Set :
+ https://www.youtube.com/watch?v=zARU16zBD2Q
+
+[RUS | Article] ConcurrentHashMap:
+https://habr.com/ru/post/132884/
+
+
+https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadPoolExecutor.html
+https://www.baeldung.com/java-executor-service-tutorial
+http://tutorials.jenkov.com/java-util-concurrent/executorservice.html#invokeany
+https://www.baeldung.com/thread-pool-java-and-guava
+https://www.baeldung.com/java-fork-join
