@@ -58,7 +58,14 @@ public class Runner {
         ExecutorService executorService = (ExecutorService) executor;
         // submit() -  submits a Callable or a Runnable task to an ExecutorService and returns a result of type Future
         // submit Runnable
-        Future<?> runnableFuture = executorService.submit(() -> System.out.println("Hello lesson 29"));
+        Future<?> runnableFuture = executorService.submit(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Hello lesson 29");
+        });
         // get  - use to wait until the submitted task is finished and the value is returned
         System.out.println(runnableFuture.get());
         runnableFuture = executorService.submit(() -> System.out.println("Hello lesson 29"), "12345");
@@ -74,10 +81,6 @@ public class Runner {
         } else {
             callableFuture.cancel(true);
         }
-
-        // Directly Create an ExecutorService
-        executorService = new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
-
 
         // invokeAny() -  assigns a collection of tasks to an ExecutorService, causing each to run,
         // and returns the result of a successful execution of one task (if there was a successful execution):
@@ -109,12 +112,14 @@ public class Runner {
 
         // Factory Methods
 //        executorService = Executors.newSingleThreadExecutor();
-//        executorService = Executors.newFixedThreadPool(10);
+        executorService = Executors.newFixedThreadPool(10);
         ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(10);
         scheduledExecutorService.schedule(secondCallable, 1, TimeUnit.SECONDS);
         // если выполнение таски займет больше времени чем период - период увеличивается
-        scheduledExecutorService.scheduleWithFixedDelay(() -> System.out.println("123"), 0, 150, TimeUnit.MILLISECONDS);
+        scheduledExecutorService.scheduleWithFixedDelay(() -> System.out.println("123"), 100, 150, TimeUnit.MILLISECONDS);
 //        executorService = Executors.newCachedThreadPool();
+        // Directly Create an ExecutorService
+        executorService = new ThreadPoolExecutor(4, 10, 1000L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<>());
 
 
 

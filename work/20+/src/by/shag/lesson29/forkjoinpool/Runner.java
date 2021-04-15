@@ -21,7 +21,7 @@ public class Runner {
         ForkJoinPool forkJoinPool = new ForkJoinPool();
         startTime = System.currentTimeMillis();
 
-        sum = forkJoinPool.invoke(new RecursiveCalc(array, 0, array.length - 1));
+        sum = forkJoinPool.invoke(new RecursiveCalc(array, 0, array.length));
 
         endTime = System.currentTimeMillis();
         System.out.println(sum);
@@ -42,14 +42,15 @@ public class Runner {
             this.end = end;
         }
 
+
         @Override
         protected Double compute() {
-            if (end - start <= 25_00) {
+            if (end - start <= 25_000) {
                 return MathUtil.calculate(array, start, end);
             } else {
-                int middle = start + (end - start / 2);
-                RecursiveCalc left = new RecursiveCalc(array, start, middle - 1);
-                RecursiveCalc right = new RecursiveCalc(array, middle, end - 1);
+                int middle = start + ((end - start) / 2);
+                RecursiveCalc left = new RecursiveCalc(array, start, middle);
+                RecursiveCalc right = new RecursiveCalc(array, middle, end);
                 invokeAll(left, right);
                 return left.join() + right.join();
             }
