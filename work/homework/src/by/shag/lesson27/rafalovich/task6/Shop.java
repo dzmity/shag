@@ -20,7 +20,7 @@ public class Shop {
     }
 
     public void deliver(int quantity) throws InterruptedException {
-        while (productQuantity.get() + quantity > SHOP_CAPACITY) {
+        while ( productQuantity.get() + quantity > SHOP_CAPACITY) {
             System.out.println("Склад заполнен " + productQuantity);
         }
         productQuantity.getAndAdd(quantity);
