@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -76,7 +77,40 @@ public class Lesson31 {
                 .flatMapToInt(humanNew -> humanNew.getMarks().stream().mapToInt(mark -> mark))
                 .max().orElseGet(() -> 0);
         System.out.println(max);
+
+
+        Optional<HumanNew> first = Stream.of(
+                new HumanNew("Dima", 29, List.of(9, 10)),
+                new HumanNew("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+        )
+//                .findFirst();
+        .findAny();
+        System.out.println(first.orElse(new HumanNew("Valentina", 10, new ArrayList<>())));
+
+        Stream.of(
+                new HumanNew("Dima", 29, List.of(9, 10)),
+                new HumanNew("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+        )
+
+//                .collect(Collectors.toSet());
+//        .count();
+//        .anyMatch(humanNew -> humanNew.getName().equalsIgnoreCase("maria"))
+//        .allMatch(humanNew -> !humanNew.getMarks().isEmpty());
+//        .noneMatch(humanNew -> !humanNew.getMarks().isEmpty());
+//        .max((h1, h2) -> h1.getAge() - h2.getAge());
+//        .min((h1, h2) -> h1.getAge() - h2.getAge());
+//        .forEach(humanNew -> System.out.println(humanNew));
+//        .forEachOrdered(humanNew -> System.out.println(humanNew));
+//        .toArray();
+//        .map(HumanNew::getAge)
+        .map(human -> human.getAge())
+        .reduce((a1, a2) -> a1 * a2);
     }
+
 
     private static Optional<String> findInCollection(List<String> list, Predicate<String> predicate){
         for (String element : list) {

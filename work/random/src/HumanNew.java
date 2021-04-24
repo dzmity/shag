@@ -15,4 +15,12 @@ public class HumanNew {
     public List<Integer> getMarks() {
         return marks;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
 }
