@@ -1,11 +1,47 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Lesson32 {
 
     public static void main(String[] args) {
+        Optional<HumanNew> first = Stream.of(
+                new HumanNew("Dima", 29, List.of(9, 10)),
+                new HumanNew("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+        )
+//                .findFirst();
+                .findAny();
+        System.out.println(first.orElse(new HumanNew("Valentina", 10, new ArrayList<>())));
+
+        Stream.of(
+                new HumanNew("Dima", 29, List.of(9, 10)),
+                new HumanNew("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+        )
+
+//        .collect(Collectors.toSet());
+//        .count();
+//        .anyMatch(humanNew -> humanNew.getName().equalsIgnoreCase("maria"))
+//        .allMatch(humanNew -> !humanNew.getMarks().isEmpty());
+//        .noneMatch(humanNew -> !humanNew.getMarks().isEmpty());
+//        .max((h1, h2) -> h1.getAge() - h2.getAge());
+//        .min((h1, h2) -> h1.getAge() - h2.getAge());
+//        .forEach(humanNew -> System.out.println(humanNew));
+//        .forEachOrdered(humanNew -> System.out.println(humanNew));
+//        .toArray();
+//        .map(HumanNew::getAge)
+                .map(human -> human.getAge())
+                .reduce((a1, a2) -> a1 * a2);
+
+
+
+
         List<String> collection =  List.of("a1", "a2", "a3", "a1");
         long count = collection.stream()
                 .filter(str -> str.equals("a1"))
@@ -47,31 +83,6 @@ public class Lesson32 {
         // 16 Отсортировать первую коллекцию по алфавиту и собрать в лист
         // 17 Отсортировать первую коллекцию по алфавиту в обратном порядке,
         // удалить дубликаты и вывести все элементы на экран
-
-
-        collection.stream().filter("a1"::equals).count();
-
-
-
-
-
-
-        collection.stream().findFirst().orElse("0");
-
-
-
-
-
-        collection.stream().skip(collection.size() - 1).findAny().orElse("empty");
-        collection.stream().filter("a3"::equals).findFirst().get();
-        collection.stream().skip(2).findFirst().get();
-        collection.stream().skip(1).limit(2).toArray();
-        collection.stream().filter((s) -> s.contains("1")).collect(Collectors.toList());
-
-
-        collection.stream().anyMatch("a1"::equals);
-        collection.stream().anyMatch("a8"::equals);
-        collection.stream().allMatch((s) -> s.contains("1"));
-        collection.stream().noneMatch("a7"::equals);
+        // 18 Вернуть сумму нечетных чисел или 0)
     }
 }
