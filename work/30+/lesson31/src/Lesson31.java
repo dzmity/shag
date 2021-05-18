@@ -2,10 +2,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Lesson31 {
@@ -71,29 +69,29 @@ public class Lesson31 {
 
 
         long max = Stream.of(
-                new HumanNew("Dima", 29, List.of(9, 10)),
-                new HumanNew("Anton", 40, List.of(8, 7, 4)),
-                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)))
+                new HumanNew3("Dima", 29, List.of(9, 10)),
+                new HumanNew3("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew3("Maria", 18, List.of(2, 3, 4, 1)))
                 .flatMapToInt(humanNew -> humanNew.getMarks().stream().mapToInt(mark -> mark))
                 .max().orElseGet(() -> 0);
         System.out.println(max);
 
 
-        Optional<HumanNew> first = Stream.of(
-                new HumanNew("Dima", 29, List.of(9, 10)),
-                new HumanNew("Anton", 40, List.of(8, 7, 4)),
-                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
-                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+        Optional<HumanNew3> first = Stream.of(
+                new HumanNew3("Dima", 29, List.of(9, 10)),
+                new HumanNew3("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew3("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew3("Anton", 18, List.of(9, 9, 4, 1))
         )
 //                .findFirst();
         .findAny();
-        System.out.println(first.orElse(new HumanNew("Valentina", 10, new ArrayList<>())));
+        System.out.println(first.orElse(new HumanNew3("Valentina", 10, new ArrayList<>())));
 
         Stream.of(
-                new HumanNew("Dima", 29, List.of(9, 10)),
-                new HumanNew("Anton", 40, List.of(8, 7, 4)),
-                new HumanNew("Maria", 18, List.of(2, 3, 4, 1)),
-                new HumanNew("Anton", 18, List.of(9, 9, 4, 1))
+                new HumanNew3("Dima", 29, List.of(9, 10)),
+                new HumanNew3("Anton", 40, List.of(8, 7, 4)),
+                new HumanNew3("Maria", 18, List.of(2, 3, 4, 1)),
+                new HumanNew3("Anton", 18, List.of(9, 9, 4, 1))
         )
 
 //                .collect(Collectors.toSet());

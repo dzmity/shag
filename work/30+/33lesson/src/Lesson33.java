@@ -16,12 +16,13 @@ public class Lesson33 {
     // file:///home/dzmitry/Downloads/Java_from_EPAM_Blinov_2020.pdf
     public static void main(String[] args) throws SQLException, IOException {
         // Как установить соединение с БД ?
-        Connection connection1 = createConnectionFirstCase();
+//        Connection connection1 = createConnectionFirstCase();
 
         // Параметры соединения можно задавать: с помощью прямой передачи значений в коде класса,
         // а также с помощью файлов properties, json, yaml или xml.
         // Чтение параметров соединения с базой данных и получение соединения
         // следует вынести в отдельный класс - e.x. ConnectorCreator
+
         Properties properties = new Properties();
         properties.put("user", "shag");
         properties.put("password", "shag");
@@ -30,7 +31,7 @@ public class Lesson33 {
         properties.put("useUnicode", "true");
         properties.put("serverTimezone", "UTC");
         String url = "jdbc:postgresql://localhost:5433/shag";
-        Connection connection2 = createConnectionSecondCase(properties, url);
+//        Connection connection2 = createConnectionSecondCase(properties, url);
 
         Connection connection = createConnectionThirdCase();
 
@@ -50,7 +51,7 @@ public class Lesson33 {
         handleDataWithUpdate(statement2);
 
         // Работа с методанными
-        connection1.getMetaData();
+        connection.getMetaData();
         resultSet.getMetaData();
 
         // try with resources ?
@@ -71,6 +72,10 @@ public class Lesson33 {
         // batch // autocommit
     }
 
+    private static void correctConectionHandling() {
+
+    }
+
     private static void workWithPreparedStatement(Connection connection, Statement statement, ResultSet resultSet) throws SQLException {
         String sql = "INSERT INTO months(id, name, days) VALUES(?, ?, ?)";
         PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -87,13 +92,13 @@ public class Lesson33 {
     }
 
     private static void handleData(Statement statement) throws SQLException {
-        ResultSet resultSet = statement.executeQuery("select * from months");
+        ResultSet resultSet = statement.executeQuery("select * from months where days > 30");
         while (resultSet.next()) {
 
-            System.out.println(String.format("%s %S %s",
-                    resultSet.getInt("id"),
-                    resultSet.getString("name"),
-                    resultSet.getInt("days")));
+            int id = resultSet.getInt("id");
+            String name = resultSet.getString("name");
+            int days = resultSet.getInt("days");
+            System.out.println(String.format("%s %s %s", id, name, days));
         }
     }
 
@@ -118,7 +123,7 @@ public class Lesson33 {
 
     private static Connection createConnectionFirstCase() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5433/shag", "shag", "shag");
+                "jdbc:postgresql://localhost:5432/shag", "shag", "shag");
         // экземпляр драйвера загружается автоматически при попытке получения соединения с БД
     }
 
