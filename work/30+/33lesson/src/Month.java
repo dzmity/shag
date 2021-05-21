@@ -1,4 +1,5 @@
 public class Month {
+
     private Integer id;
     private String name;
     private Integer days;
@@ -16,5 +17,18 @@ public class Month {
                 ", name='" + name + '\'' +
                 ", days=" + days +
                 '}';
+    }
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getDays() {
+        return days;
     }
 }

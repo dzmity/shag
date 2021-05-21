@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -6,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MonthService {
+    private final String PREPARED_INSERT =
+            "insert into months (id, name, days) values (?, ?, ?)";
 
     private ConnectionCreator creator = new ConnectionCreator();
 
@@ -24,6 +27,47 @@ public class MonthService {
 
         }
         return months;
+    }
+
+
+
+    public void create(Month month) {
+        try (Connection connection = creator.createConnection();
+        Statement statement = connection.createStatement(
+                ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE)) {
+
+            Integer id = month.getId();
+            String name = month.getName();
+            Integer days = month.getDays();
+
+            String insertQuery;
+            insertQuery = "insert into months (id, days, name) values (%s, %s, '%s')";
+            insertQuery = String.format(insertQuery, id, days, name);
+            statement.addBatch(insertQuery);
+            statement.executeBatch();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+
+    public void createWithPreparedStatement(Month month) {
+        try (Connection connection = creator.createConnection();
+                PreparedStatement statement = connection.prepareStatement(PREPARED_INSERT)) {
+
+            Integer id = month.getId();
+            String name = month.getName();
+            Integer days = month.getDays();
+
+            statement.setInt(1, id);
+            statement.setString(2, name);
+            statement.setInt(3, days);
+            statement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
     }
 
     private Month handleResultSetRecord(ResultSet resultSet) throws SQLException {
