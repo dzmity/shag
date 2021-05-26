@@ -1,0 +1,29 @@
+Создать таблицу , представляющую из себя примитивные типы языка JAVA и наполнить ее
+Первичный ключ (id) - доолжен быть с автоинкрементом
+Создать JavaPrimitivesService - сервисный класс, отвечающий за работу с вышеупомянутой таблицей
+Класс должен иметь следующие методы -
+- отдавать Set всех примитивов getAllJavaPrimitives()
+- отдавать размер типа в байтах по имени getSizeInBytesByName(String name)
+
+P.S.
+- см. методы PreparedStatement executeUpdate () / executeBatch() / execute() для выполнения модифицирующих sql запросов
+- конекшен к бд должен создаваться при помощи *.properties файла
+- создание таблицы и вставка всех значений должна производиться через java code (e.x. в конструкторе JavaPrimitivesService)
+- по окончанию работы таблица и все данные должны быть удалены, чтобы при повторном запуске не выбрасывалась ошибка
+(что таблица уже существует и пр.)
+
+
+*** Дополнительно (+ балл): Последний пункт можно не делать, если при создании и наполнении таблицы использовать возможности
+postgresql
+- ON CONFLICT - https://www.postgresqltutorial.com/postgresql-upsert/    https://habr.com/ru/post/264281/
+- IF NOT EXISTS - https://www.postgresql.org/docs/9.5/sql-createtableas.html
+
+
+Используйте таблицу j2020 с последнего занятия.
+Добавить в StudentService следующие методы
+
+- Student findById(int id)
+- Student findByPhoneNumber(String prone number)
+- List<Student> findByName(String name)
+- void update(Student student)
+- void deleteById(int id)
