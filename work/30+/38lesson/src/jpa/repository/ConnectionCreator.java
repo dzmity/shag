@@ -13,7 +13,7 @@ public class ConnectionCreator {
     public static Connection createConnection() {
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader(generateFilePath("work/30+/33lesson/resources/database.properties")));
+            properties.load(new FileReader(generateFilePath("src/main/resources/database.properties")));
         } catch (IOException e) {
             throw new RuntimeException("Can not read connection properties", e);
         }
